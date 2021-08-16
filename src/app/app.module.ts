@@ -8,6 +8,7 @@ import { CategoryComponent } from './category/category.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movies/movie/movie.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [  //componentler burada bildiriliyor.
@@ -16,7 +17,8 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
     CategoryComponent,
     MoviesComponent,
     MovieComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    FooterComponent
   ],
   imports: [       // module eklenir.
     BrowserModule,
