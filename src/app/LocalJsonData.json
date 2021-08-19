@@ -15,9 +15,9 @@
         "details": "Details"
     },
     "WARN": {
-        "NOT_FOUND_FILM": "Film bulunamadı!"
+        "NOT_FOUND_FILM": "Film not found!"
     },
     "INFO": {
-        "FOUND_FILM": "film bulundu."
+        "FOUND_FILM": "film found."
     }
 }
