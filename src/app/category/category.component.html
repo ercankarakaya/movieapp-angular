@@ -1,1 +1,6 @@
-<p>category works!</p>
+<div class="list-group">
+    <!-- <a href="#" class="list-group-item list-group-item-action">{{(i+1)+'-'+category}}</a> -->
+    <a href="#" class="list-group-item list-group-item-action"
+     *ngFor="let category of categories">{{category.name}}</a>
+
+</div>

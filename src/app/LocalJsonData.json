@@ -1,0 +1,23 @@
+{
+    "NAVBAR": {
+        "TITLE": "MOVIE APP",
+        "Home": "Home",
+        "Movies": "Movies"
+    },
+    "CATEGORY": {
+        "TITLE": "Category"
+
+    },
+    "MOVIE": {
+        "TITLE": "Movie",
+        "FILM_LIST": "FILM LIST",
+        "POPULAR_FILMS":"POPULAR FILMS",
+        "details": "Details"
+    },
+    "WARN": {
+        "NOT_FOUND_FILM": "Film bulunamadı!"
+    },
+    "INFO": {
+        "FOUND_FILM": "film bulundu."
+    }
+}

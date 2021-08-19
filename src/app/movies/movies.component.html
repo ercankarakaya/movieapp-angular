@@ -1,1 +1,86 @@
-<p>movies works!</p>
+<div *ngIf="movies.length>0; else no_movies">
+
+    <ng-template [ngTemplateOutlet]="movieList3" [ngTemplateOutletContext]="{list_movies: movieRepository.getPopularMovies()}"> </ng-template>
+    <ng-template [ngTemplateOutlet]="movieList1"> </ng-template>
+
+</div>
+
+<ng-template #no_movies>
+    <div class="alert alert-warning">{{GeneralTextData.WARN.NOT_FOUND_FILM}}</div>
+</ng-template>
+
+
+<ng-template #movieList1>
+    <h4>{{GeneralTextData.MOVIE.FILM_LIST}}</h4>
+    <div class="alert alert-success">{{movies.length}} {{GeneralTextData.INFO.FOUND_FILM}}</div>
+    <div class="card mb-3" *ngFor="let movie of movies">
+        <div class="row">
+            <div class="col md-3">
+                <img src="assets/img/{{ movie.imageUrl }}" class="img-fluid rounded-start imageClass" alt="">
+            </div>
+            <div class="col md-9">
+                <div class="card-body">
+                    <h2 class="card-title">{{movie.title}}</h2>
+                    <p class="card-text">{{movie.desc}}</p>
+                    <button class="btn btn-sm btn-outline-primary">{{GeneralTextData.MOVIE.details}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #movieList3 let-popularMovies="list_movies">
+    <h4>{{GeneralTextData.MOVIE.POPULAR_FILMS}}</h4>
+    <div class="alert alert-success">{{popularMovies.length}} {{GeneralTextData.INFO.FOUND_FILM}}</div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
+        <div class="col" *ngFor="let movie of popularMovies">
+            <div class="card h-100">
+                <img src="assets/img/{{ movie.imageUrl }}" class="img-fluid rounded-start" alt="">
+                <div class="card-body">
+                    <h2 class="card-title">{{movie.title}}</h2>
+                    <p class="card-text">{{movie.desc}}</p>
+                    <button class="btn btn-sm btn-outline-primary">{{GeneralTextData.MOVIE.details}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<!-- <div class="card mb-3">
+    <div class="row">
+        <div class="col md-3">
+            <img src="assets/img/godfather.jpg" class="img-fluid rounded-start" alt="">
+        </div>
+        <div class="col md-9">
+            <div class="card-body">
+                <h2 class="card-title">GODFATHER</h2>
+                <p class="card-text">An organized crime dynasty's aging patriarch transfers
+                    control of his clandestine empire to his reluctant son.</p>
+                <button class="btn btn-sm btn-outline-primary">Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="row">
+        <div class="col md-3">
+            <img src="assets/img/x-men.jpg" class="img-fluid rounded-start" alt="">
+        </div>
+        <div class="col md-9">
+            <div class="card-body">
+                <h2 class="card-title">X MEN</h2>
+                <p class="card-text">X-Men: Directed by Bryan Singer.
+                    With Hugh Jackman, Patrick Stewart, Ian McKellen, Famke Janssen.</p>
+                <button class="btn btn-sm btn-outline-primary">Details</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <ul>
+    <li *ngFor="let movie of movies">{{movie}}</li>
+</ul> -->
