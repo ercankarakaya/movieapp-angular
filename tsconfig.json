@@ -19,7 +19,12 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+ //bunlar json için sonradan eklendi.   
+"resolveJsonModule": true,
+"esModuleInterop": true,
+//getMovieById_3(id: number): Movie methodu için eklendi.
+"strictNullChecks":false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

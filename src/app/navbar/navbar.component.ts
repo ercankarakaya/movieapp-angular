@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import localJsonData from '../LocalJsonData.json';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  
+  GeneralData=localJsonData;
+  //navTitle=localJsonData.TITLE.navTitle;
+
+
 
   constructor() { }
 
