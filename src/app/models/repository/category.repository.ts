@@ -7,7 +7,7 @@ export class CategoryRepository {
     this.categories = [
       { id: 1, name: 'Science Fiction' },
       { id: 2, name: 'Action' },
-      { id: 3, name: 'Macera' },
+      { id: 3, name: 'Adventure' },
       { id: 4, name: 'Drama' },
       { id: 5, name: 'Romantic' },
     ];
