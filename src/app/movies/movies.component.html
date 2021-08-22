@@ -1,7 +1,13 @@
 <div *ngIf="movies.length>0; else no_movies">
 
-    <ng-template [ngTemplateOutlet]="movieList3" [ngTemplateOutletContext]="{list_movies: movieRepository.getPopularMovies()}"> </ng-template>
+    <div class="mb-3">
+        <input [(ngModel)]="filterText" type="text" class="form-control" placeholder="Search">
+        <small class="text-muted" *ngIf="filterText">Aradığınız kelime: {{filterText}}</small>
+    </div>
+
     <ng-template [ngTemplateOutlet]="movieList1"> </ng-template>
+    <ng-template [ngTemplateOutlet]="movieList3"
+        [ngTemplateOutletContext]="{list_movies: movieRepository.getPopularMovies()}"> </ng-template>
 
 </div>
 
@@ -13,15 +19,20 @@
 <ng-template #movieList1>
     <h4>{{GeneralTextData.MOVIE.FILM_LIST}}</h4>
     <div class="alert alert-success">{{movies.length}} {{GeneralTextData.INFO.FOUND_FILM}}</div>
-    <div class="card mb-3" *ngFor="let movie of movies">
+    <div class="card mb-3" *ngFor="let movie of movies | movieFilter:filterText">
+        <!--örn. bir parametre daha eklensin. buda number türünde olsun.-> movieFilter:filterText:10-->
         <div class="row">
             <div class="col md-3">
                 <img src="assets/img/{{ movie.imageUrl }}" class="img-fluid rounded-start imageClass" alt="">
             </div>
             <div class="col md-9">
                 <div class="card-body">
-                    <h2 class="card-title">{{movie.title}}</h2>
-                    <p class="card-text">{{movie.desc}}</p>
+                    <h2 class="card-title">{{movie.title | titlecase}}</h2>
+                    <!-- Baş harfi büyük yapar. (pipe) -->
+                    <!-- <h2 class="card-title">{{movie.title | lowercase}}</h2> Bütün harfleri küçük yapar -->
+                    <p class="card-text">{{movie.desc | summary:30}}</p>
+                    <p class="card-text">{{movie.datePublished | date:'dd/MM/y'}}</p>
+                    <!--date:'shortTime',..vs.vs-->
                     <button class="btn btn-sm btn-outline-primary">{{GeneralTextData.MOVIE.details}}</button>
                 </div>
             </div>
@@ -78,7 +89,6 @@
         </div>
     </div>
 </div> -->
-
 
 
 <!-- <ul>
