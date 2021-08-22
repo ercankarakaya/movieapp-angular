@@ -3,5 +3,6 @@ export interface Movie {
   title: string;
   imageUrl: string;
   desc: string;
-  isPopular:boolean;
+  isPopular: boolean;
+  datePublished: Date;
 }
